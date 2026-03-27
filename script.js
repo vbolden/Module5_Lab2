@@ -48,8 +48,8 @@ password.addEventListener('blur', (e) => {
         password.reportValidity()
         return
     } else if(password.validity.patternMismatch){
-        password.setCustomValidity('')
-    }else {
+        password.setCustomValidity('Password does not meet requirements')
+    } else {
         email.setCustomValidity('')
     }
 })
@@ -59,7 +59,11 @@ confirmPassword.addEventListener('blur', (e) => {
         confirmPassword.setCustomValidity("Passwords do not match");
         confirmPassword.reportValidity()
         confirmPassword.style.borderColor = 'red';
+    } else if(confirmPassword.value == '') {
+        confirmPassword.setCustomValidity('Please retype your password')
+        confirmPassword.reportValidity()
     } else {
-        confirmErrorMsg.innerHTML = "";
+        confirmPassword.setCustomValidity('')
     }
 })
+
