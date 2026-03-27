@@ -8,3 +8,11 @@ let password = document.getElementById('password');
 let passwordErrorMsg = document.getElementById('passwordError');
 let confirmPassword = document.getElementById('confirmPassword');
 let confirmErrorMsg = document.getElementById('confirmPasswordError');
+
+// EVENT LISTENERS
+window.addEventListener('load', () => {
+  const savedUserName = localStorage.getItem('username');
+  if (savedUserName) {
+    username.value = savedUserName;
+  }
+});
