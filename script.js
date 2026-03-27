@@ -16,3 +16,13 @@ window.addEventListener('load', () => {
     username.value = savedUserName;
   }
 });
+
+// userName.addEventListener('blur', )
+// email.addEventListener
+// password.addEventListener
+confirmPassword.addEventListener('blur', () => {
+    if(confirmPassword.value !== password.value){
+        confirmPassword.setCustomValidity("Passwords don't match")
+        confirmErrorMsg.innerHTML = "Passwords don't match"
+    }
+})
