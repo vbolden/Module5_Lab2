@@ -1,6 +1,6 @@
 // VALUES
 let form = document.getElementById('registrationForm');
-let userName = document.getElementById('username');
+let username = document.getElementById('username');
 let nameErrorMsg = document.getElementById('usernameError');
 let email = document.getElementById('email');
 let emailErrorMsg = document.getElementById('emailError');
@@ -10,19 +10,15 @@ let confirmPassword = document.getElementById('confirmPassword');
 let confirmErrorMsg = document.getElementById('confirmPasswordError');
 
 // EVENT LISTENERS
-window.addEventListener('load', () => {
-  const savedUserName = localStorage.getItem('username');
-  if (savedUserName) {
-    username.value = savedUserName;
-  }
+
+window.addEventListener('load', ()=> {
+    const savedUser = sessionStorage.getItem('username');
+    if(savedUser){
+        username.value = savedUser;
+    }
 });
 
-// userName.addEventListener('blur', )
-// email.addEventListener
-// password.addEventListener
-confirmPassword.addEventListener('blur', () => {
-    if(confirmPassword.value !== password.value){
-        confirmPassword.setCustomValidity("Passwords don't match")
-        confirmErrorMsg.innerHTML = "Passwords don't match"
-    }
-})
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    sessionStorage.setItem('username', username.value);
+});
