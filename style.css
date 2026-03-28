@@ -45,7 +45,10 @@ h1 {
   border-color: #e74c3c; /* Light red for invalid built-in states */
 }
 /* You can add a .valid class if you want to style valid inputs too */
- 
+.form-group input:valid {
+    border-color: green;
+} 
+
 .form-group .error-message {
   display: block;
   color: #e74c3c; /* Red for error messages */
